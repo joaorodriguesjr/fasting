@@ -4,6 +4,7 @@ import styles from './index.module.css'
 import { useFasts } from '@Hook/Fasts'
 import Stopwatch from '@Component/Stopwatch'
 import Progress from '@Component/Progress'
+import Link from 'next/link'
 
 
 const Home: NextPage = () => {
@@ -25,6 +26,9 @@ const Home: NextPage = () => {
   </div>
 
   return <>
+    <div className={styles.settings}>
+      <Link href={'/settings'}>⚙️</Link>
+    </div>
     <div className={styles.container}>
     <div className={styles.report}>
       {
