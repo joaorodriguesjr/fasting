@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.svg {
+  transform: rotate(-90deg);
+  position: absolute;
+}
+
+.circle__00 {
+  fill: none;
+  stroke: #303030;
+  stroke-width: 1.0rem;
+}
+
+.circle__01 {
+  fill: none;
+  stroke: #ffd000;
+  stroke-width: 1.0rem;
+  stroke-dasharray: 950;
+  transition: all 1.0s linear;
+}
+
+.children {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
