@@ -11,3 +11,5 @@ npm run dev
 ```
 
 A deployed version will be available soon in my personal domain at first.
+
+![A screenshot of the app](/frontend/public/screenshot.png?raw=true "The app screenshot")
