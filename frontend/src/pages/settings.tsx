@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import styles from './settings.module.css'
 import { useFasts } from '@Hook/Fasts'
 import Icon from '@Component/Icon'
+import Link from 'next/link'
 
 
 const Settings: NextPage = () => {
@@ -12,6 +13,11 @@ const Settings: NextPage = () => {
   }
 
   return <div className={styles.container}>
+    <header>
+      <Link href={'/'}>
+        <span><Icon name={'ArrowLeft'}/></span>
+      </Link>
+    </header>
     <h2>Protocol</h2>
     <form name="protocols">
       <input id="12x12" type="radio" name="current" value="12" checked={fasts.target === 12} onChange={onChange}/>
