@@ -1,0 +1,40 @@
+name: Delivery workflow
+
+on:
+  push:
+    branches:
+    - prototype
+
+jobs:
+  delivery:
+    runs-on: self-hosted
+    permissions:
+      packages: write
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Login
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: joaorodriguesjr
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build
+      uses: docker/build-push-action@v2
+      with:
+        file: docker/dockerfile
+        context: .
+        tags: ghcr.io/joaorodriguesjr/fasting:${{ github.sha }}
+        push: true
+
+    - name: Apply
+      run: |
+        sed -i 's#CONTAINER_IMAGE#ghcr.io/joaorodriguesjr/fasting:${{ github.sha }}#' kubernetes/deployment.yml
+        microk8s.kubectl apply -f kubernetes/deployment.yml
+        microk8s.kubectl apply -f kubernetes/service.yml
+        microk8s.kubectl apply -f kubernetes/ingress.yml
+
+    - name: Rollout
+      run: |
+        microk8s.kubectl rollout restart deployment.apps/fasting-frontend

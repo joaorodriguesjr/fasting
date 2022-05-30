@@ -17,8 +17,6 @@ spec:
       labels:
         app: fasting-frontend
     spec:
-      imagePullSecrets:
-      - name: fasting-registry
       containers:
       - name: fasting-frontend
         image: CONTAINER_IMAGE
