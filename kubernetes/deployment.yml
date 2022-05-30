@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fasting-frontend
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: fasting-frontend
+  template:
+    metadata:
+      labels:
+        app: fasting-frontend
+    spec:
+      imagePullSecrets:
+      - name: fasting-registry
+      containers:
+      - name: fasting-frontend
+        image: CONTAINER_IMAGE
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 10Mi
+        ports:
+        - containerPort: 3000
