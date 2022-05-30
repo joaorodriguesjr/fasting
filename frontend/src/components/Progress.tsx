@@ -8,7 +8,7 @@ interface ProgressProps {
 
 const Progress: FunctionComponent<ProgressProps> = ({ start, target, children }) => {
   const difference = Date.now() - start
-  const max = target * 1000 * 60 // * 60
+  const max = target * 1000 * 60 * 60
   const remaining = (100 - (difference / max * 100)) / 100
   const strokeDashoffset = difference >= max ? 0 : 950 * remaining
 
