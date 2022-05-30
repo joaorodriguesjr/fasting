@@ -33,7 +33,6 @@ const Home: NextPage = () => {
       </Link>
     </div>
     <div className={styles.container}>
-    <div className={styles.report}>
       {
         fasts.current
         ? <Progress start={fasts.current.start} target={fasts.target}>
@@ -51,7 +50,6 @@ const Home: NextPage = () => {
             <button onClick={() => startFasting()}>Start</button>
           </Progress>
       }
-    </div>
     </div>
   </>
 }
