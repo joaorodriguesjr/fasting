@@ -28,13 +28,11 @@ jobs:
         tags: ghcr.io/joaorodriguesjr/fasting:${{ github.sha }}
         push: true
 
+    - name: Container image name substitution
+      run: sed -i 's#CONTAINER_IMAGE#ghcr.io/joaorodriguesjr/fasting:${{ github.sha }}#' kubernetes/deployment.yml
+
     - name: Containers orchestration
-      run: |
-        sed -i 's#CONTAINER_IMAGE#ghcr.io/joaorodriguesjr/fasting:${{ github.sha }}#' kubernetes/deployment.yml
-        microk8s.kubectl apply -f kubernetes/deployment.yml
-        microk8s.kubectl apply -f kubernetes/service.yml
-        microk8s.kubectl apply -f kubernetes/ingress.yml
+      run: microk8s.kubectl apply -f kubernetes
 
     - name: Version rollout
-      run: |
-        microk8s.kubectl rollout restart deployment.apps/fasting-frontend
+      run: microk8s.kubectl rollout restart deployment.apps/fasting-frontend
