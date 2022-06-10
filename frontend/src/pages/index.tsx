@@ -23,33 +23,32 @@ const Home: NextPage = () => {
   }, [ reload ])
 
   const protocol = <div className={styles.protocol}>
-    {fasts.target}/{24 - fasts.target}
+    {fasts.target}/{24 - fasts.target} <Icon name={'Cog'}/>
   </div>
 
+  const progress = (fasts.current == null)
+    ? <>
+        <Progress start={0} target={0}>
+          <div className={styles.stopwatch}>
+            {protocol}
+            00:00:00
+          </div>
+        </Progress>
+        <button onClick={startFasting}>Start Fast</button>
+      </>
+    : <>
+        <Progress start={fasts.current.start} target={fasts.target}>
+          <div className={styles.stopwatch}>
+            {protocol}
+            <Stopwatch activation={ fasts.current.start } />
+          </div>
+        </Progress>
+        <button onClick={stopFasting}>End Fast</button>
+      </>
+
   return <>
-    <div className={styles.settings}>
-      <Link href={'/settings'}>
-        <span><Icon name={'Cog'}/></span>
-      </Link>
-    </div>
     <div className={styles.container}>
-      {
-        fasts.current
-        ? <Progress start={fasts.current.start} target={fasts.target}>
-            {protocol}
-            <div className={styles.stopwatch}>
-              <Stopwatch activation={ fasts.current.start } />
-            </div>
-            <button onClick={() => stopFasting()}>Stop</button>
-          </Progress>
-        : <Progress start={0} target={0}>
-            {protocol}
-            <div className={styles.stopwatch}>
-              00:00:00
-            </div>
-            <button onClick={() => startFasting()}>Start</button>
-          </Progress>
-      }
+      {progress}
     </div>
   </>
 }
