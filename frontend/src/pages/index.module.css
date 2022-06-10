@@ -11,7 +11,7 @@
   max-height: 1000px;
   font-size: 1.5rem;
 
-  background-color: #222222;
+  background-color: #202020;
   color: #a0a0a0;
 }
 
@@ -43,8 +43,10 @@
 
 .status {
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  margin: 32px 0;
+  margin: 16px 0;
   padding: 0 48px;
   font-size: 0.85rem;
   color: #808080;
