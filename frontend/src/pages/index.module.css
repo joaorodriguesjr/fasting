@@ -81,7 +81,7 @@ td.highlight {
   text-align: left;
 }
 
-.container button {
+.action button {
   margin: 1.5rem 0;
   padding: 0.65rem 3.0rem;
   color: #ffd000;
@@ -93,18 +93,58 @@ td.highlight {
   transition: all 0.25s ease-in-out;
 }
 
-.container button:active {
+.action button:active {
   background-color: hsla(50, 100%, 25%, 0.25);
 }
 
 .report {
+  display: grid;
+  grid-template-columns: 32px 1fr 32px;
+}
+
+.report_control {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  grid-row: 2;
+  padding-top: 1.25rem;
+}
+
+.report_control:first-child {
+  grid-column: 1;
+}
+
+.report_control:last-child {
+  grid-column: 3;
+}
+
+.report_control button {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: #808080;
+  border-radius: 50%;
+  transition: all 0.25s ease-in-out;
+}
+
+.report_control button:active {
+  background-color: #303030;
 }
 
 .report_month {
+  grid-row: 1;
+  grid-column: 2;;
+  font-size: 1.25rem;
+  margin: 16px 0 0px 0;
+  text-align: center;@wwwwwwwwwws
+}
+
+.report_content {
+  grid-row: 2;
+  grid-column: 2;
   font-size: 1.5rem;
   margin: 16px 0;
 }

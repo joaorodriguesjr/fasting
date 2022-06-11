@@ -57,7 +57,9 @@ const Home: NextPage = () => {
             00:00:00
           </div>
         </Progress>
-        <button onClick={startFasting}>Start Fast</button>
+        <div className={styles.action}>
+          <button onClick={startFasting}>Start Fast</button>
+        </div>
       </>
     : <>
         <Progress start={fasts.current.start} target={fasts.target}>
@@ -67,7 +69,9 @@ const Home: NextPage = () => {
           </div>
         </Progress>
         {status}
-        <button onClick={stopFasting}>End Fast</button>
+        <div className={styles.action}>
+          <button onClick={stopFasting}>End Fast</button>
+        </div>
       </>
 
   return <>
@@ -75,36 +79,50 @@ const Home: NextPage = () => {
       {progress}
 
       <div className={styles.report}>
+        <div className={styles.report_control}>
+          <button>
+            <Icon name={'ChevronLeft'}/>
+          </button>
+        </div>
         <div className={styles.report_month}>January 2022</div>
-        <div className={styles.report_days}>
-          <div className={styles.report_day}>
-            <div className={styles.report_number}>15</div>
-            <div className={styles.report_hours}></div>
+
+        <div className={styles.report_content}>
+          <div className={styles.report_days}>
+            <div className={styles.report_day}>
+              <div className={styles.report_number}>15</div>
+              <div className={styles.report_hours}></div>
+            </div>
+            <div className={styles.report_day}>
+              <div className={styles.report_number}>16</div>
+              <div className={styles.report_hours}></div>
+            </div>
+            <div className={styles.report_day}>
+              <div className={styles.report_number}>17</div>
+              <div className={styles.report_hours}></div>
+            </div>
+            <div className={styles.report_day}>
+              <div className={styles.report_number}>18</div>
+              <div className={styles.report_hours}></div>
+            </div>
+            <div className={styles.report_day}>
+              <div className={styles.report_number}>19</div>
+              <div className={styles.report_hours}></div>
+            </div>
+            <div className={styles.report_day}>
+              <div className={styles.report_number}>20</div>
+              <div className={styles.report_hours}></div>
+            </div>
+            <div className={styles.report_day}>
+              <div className={styles.report_number}>21</div>
+              <div className={styles.report_hours}></div>
+            </div>
           </div>
-          <div className={styles.report_day}>
-            <div className={styles.report_number}>16</div>
-            <div className={styles.report_hours}></div>
-          </div>
-          <div className={styles.report_day}>
-            <div className={styles.report_number}>17</div>
-            <div className={styles.report_hours}></div>
-          </div>
-          <div className={styles.report_day}>
-            <div className={styles.report_number}>18</div>
-            <div className={styles.report_hours}></div>
-          </div>
-          <div className={styles.report_day}>
-            <div className={styles.report_number}>19</div>
-            <div className={styles.report_hours}></div>
-          </div>
-          <div className={styles.report_day}>
-            <div className={styles.report_number}>20</div>
-            <div className={styles.report_hours}></div>
-          </div>
-          <div className={styles.report_day}>
-            <div className={styles.report_number}>21</div>
-            <div className={styles.report_hours}></div>
-          </div>
+        </div>
+
+        <div className={styles.report_control}>
+          <button>
+            <Icon name={'ChevronRight'}/>
+          </button>
         </div>
       </div>
     </div>
