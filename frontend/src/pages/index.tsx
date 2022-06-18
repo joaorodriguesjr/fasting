@@ -6,6 +6,7 @@ import Stopwatch from '@Component/Stopwatch'
 import Progress from '@Component/Progress'
 import Link from 'next/link'
 import Icon from '@Component/Icon'
+import Head from 'next/head'
 
 
 const Home: NextPage = () => {
@@ -75,6 +76,10 @@ const Home: NextPage = () => {
       </>
 
   return <>
+    <Head>
+      <link rel="icon" href="/favicon.ico" sizes="any"/>
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+    </Head>
     <div className={styles.container}>
       {progress}
 
