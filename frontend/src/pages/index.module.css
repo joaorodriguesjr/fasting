@@ -84,9 +84,9 @@ td.highlight {
 .action button {
   margin: 1.5rem 0;
   padding: 0.65rem 3.0rem;
-  color: #ffd000;
+  color: #45D865;
   background-color: transparent;
-  border: 0.125rem solid #ffd000;
+  border: 0.125rem solid #45D865;
   border-radius: 1.25rem;
   font-weight: bolder;
   text-transform: uppercase;
@@ -94,7 +94,7 @@ td.highlight {
 }
 
 .action button:active {
-  background-color: hsla(50, 100%, 25%, 0.25);
+  background-color: hsl(133, 65%, 15%);
 }
 
 .report {
