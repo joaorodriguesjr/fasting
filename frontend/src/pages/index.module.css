@@ -127,7 +127,7 @@ td.highlight {
   background-color: transparent;
   color: #808080;
   border-radius: 50%;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.10s ease-in-out;
 }
 
 .report_control button:active {
