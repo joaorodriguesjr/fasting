@@ -8,7 +8,7 @@ docker-compose --file docker/compose.yml --project-name fasting up
 
 ## Production environment
 
-![Kubernetes Deployment](https://github.com/joaorodriguesjr/fasting/actions/workflows/delivery.yml/badge.svg)
+![Kubernetes Deployment](https://github.com/joaorodriguesjr/fasting/actions/workflows/deployment.yml/badge.svg)
 
 https://fasting.joaorodriguesjr.com
 
