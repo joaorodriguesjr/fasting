@@ -2,8 +2,8 @@ name: Deployment Workflow
 
 on:
   push:
-    branches:
-    - prototype
+    tags:
+    - '*'
 
 jobs:
   deployment:
@@ -25,11 +25,11 @@ jobs:
       with:
         file: docker/dockerfile
         context: .
-        tags: ghcr.io/joaorodriguesjr/fasting:${{ github.sha }}
+        tags: ghcr.io/joaorodriguesjr/fasting:${{ github.ref_name }}
         push: true
 
     - name: Container image name substitution
-      run: sed -i 's#CONTAINER_IMAGE#ghcr.io/joaorodriguesjr/fasting:${{ github.sha }}#' kubernetes/deployment.yml
+      run: sed -i 's#CONTAINER_IMAGE#ghcr.io/joaorodriguesjr/fasting:${{ github.ref_name }}#' kubernetes/deployment.yml
 
     - name: Containers orchestration
       run: microk8s.kubectl apply -f kubernetes
