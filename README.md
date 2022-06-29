@@ -12,4 +12,4 @@ docker-compose --file docker/compose.yml --project-name fasting up
 
 https://fasting.joaorodriguesjr.com
 
-![App screenshot](frontend/public/screenshot.svg)
+![App screenshot](graphics/screenshot.svg)
