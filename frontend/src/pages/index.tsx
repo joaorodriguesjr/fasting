@@ -79,6 +79,8 @@ const Home: NextPage = () => {
     <Head>
       <link rel="icon" href="/favicon.ico" sizes="any"/>
       <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+      <title>Fasting Tracker</title>
+      <meta name="description" content="A fasting tracker that doesn't show ads or collect data."/>
     </Head>
     <div className={styles.container}>
       {progress}
