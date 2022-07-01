@@ -4,7 +4,6 @@ import styles from './index.module.css'
 import { useFasts } from '@Hook/Fasts'
 import Stopwatch from '@Component/Stopwatch'
 import Progress from '@Component/Progress'
-import Link from 'next/link'
 import Icon from '@Component/Icon'
 import Head from 'next/head'
 
