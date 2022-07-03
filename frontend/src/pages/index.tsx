@@ -9,12 +9,10 @@ import Head from 'next/head'
 
 
 const Home: NextPage = () => {
-  const [ reload, setReload ] = useState(0)
+  const [ reload, setReload ] = useState(Date.now())
   const { fasts, startFasting, stopFasting, changeProtocol } = useFasts()
 
   useEffect(() => {
-    setReload(Date.now())
-
     const timeout = setTimeout(() => {
       setReload(Date.now())
     }, 1000)
