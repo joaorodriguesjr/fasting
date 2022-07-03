@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 32px 0;
+  padding: 8px 0;
   margin: 0 auto;
 
   height: 100%;
@@ -46,7 +46,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 16px 0;
+  margin: 8px 0;
   padding: 0 48px;
   font-size: 0.85rem;
   color: #808080;
@@ -82,7 +82,7 @@ td.highlight {
 }
 
 .action button {
-  margin: 1.5rem 0;
+  margin: 16px 0;
   padding: 0.65rem 3.0rem;
   color: #45D865;
   background-color: transparent;
@@ -161,7 +161,7 @@ td.highlight {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 48px;
+  width: 40px;
 }
 
 .report_number {
@@ -170,7 +170,7 @@ td.highlight {
 }
 
 .report_hours {
-  width: 20px;
+  width: 16px;
   height: 150px;
   position: relative;
   border-radius: 16px;
@@ -182,9 +182,19 @@ td.highlight {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 20px;
+  width: 16px;
   height: 0px;
   border-radius: 16px;
   background-color: #45D865;
   transition: height 0.5s ease-in-out;
+}
+
+@media screen and (min-width: 400px) {
+  .report_day {
+    width: 48px;
+  }
+
+  .report_hours, .report_value {
+    width: 20px;
+  }
 }
