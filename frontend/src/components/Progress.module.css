@@ -1,13 +1,16 @@
 .container {
+  width: 75%;
+  min-height: 40vh;
+
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 350px;
 }
 
 .svg {
+  width: 100%;
   transform: rotate(-90deg);
   position: absolute;
 }
@@ -15,13 +18,13 @@
 .circle__00 {
   fill: none;
   stroke: #303030;
-  stroke-width: 1.0rem;
+  stroke-width: 0.85rem;
 }
 
 .circle__01 {
   fill: none;
   stroke: #45D865;
-  stroke-width: 1.0rem;
+  stroke-width: 0.85rem;
   stroke-dasharray: 950;
   transition: all 1.0s linear;
 }
