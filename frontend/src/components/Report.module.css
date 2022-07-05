@@ -1,9 +1,9 @@
-.report {
+.container {
   display: grid;
   grid-template-columns: 32px 1fr 32px;
 }
 
-.report_control {
+.control {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,15 +11,15 @@
   padding-top: 1.25rem;
 }
 
-.report_control:first-child {
+.control:first-child {
   grid-column: 1;
 }
 
-.report_control:last-child {
+.control:last-child {
   grid-column: 3;
 }
 
-.report_control button {
+.control button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,11 +34,11 @@
   transition: all 0.10s ease-in-out;
 }
 
-.report_control button:active {
+.control button:active {
   background-color: #303030;
 }
 
-.report_month {
+.month {
   grid-row: 1;
   grid-column: 2;;
   font-size: 1.25rem;
@@ -46,31 +46,31 @@
   text-align: center;
 }
 
-.report_content {
+.content {
   grid-row: 2;
   grid-column: 2;
   font-size: 1.5rem;
   margin: 16px 0;
 }
 
-.report_days {
+.days {
   display: flex;
   font-size: 0.90rem;
 }
 
-.report_day {
+.day {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 40px;
 }
 
-.report_number {
+.number {
   margin: 8px 0;
   color: #808080;
 }
 
-.report_hours {
+.hours {
   width: 16px;
   height: 150px;
   position: relative;
@@ -78,7 +78,7 @@
   background-color: #303030;
 }
 
-.report_value {
+.value {
   content: '';
   position: absolute;
   left: 0;
@@ -91,11 +91,11 @@
 }
 
 @media screen and (min-width: 400px) {
-  .report_day {
+  .day {
     width: 48px;
   }
 
-  .report_hours, .report_value {
+  .hours, .value {
     width: 20px;
   }
 }
