@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 8px 0;
+  padding: 0 48px;
+  font-size: 0.85rem;
+  color: #808080;
+}
+
+.status__line {
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+  margin-top: 4px;
+}
+
+.status table svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 0.45rem;
+}
+
+.status td {
+  padding: 4px 0;
+}
+
+td.highlight {
+  color: hsl(0, 0%, 75%);
+}
+
+.status th {
+  padding-right: 0.5rem;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+}
